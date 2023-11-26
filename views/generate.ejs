@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate QR Code</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <h1>Generate QR Code</h1>
+
+  <form action="/generate" method="POST">
+    <label for="dataInput">Data:</label>
+    <input type="text" id="dataInput" name="data" required>
+    <button type="submit">Generate QR Code</button>
+  </form>
+
+  <% if (qrCodeUrl) { %>
+    <h2>Generated QR Code:</h2>
+    <img src="<%= qrCodeUrl %>" alt="QR Code">
+  <% } %>
+
+  <a href="/">Back to Home</a>
+</body>
+</html>
